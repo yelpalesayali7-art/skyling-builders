@@ -330,6 +330,192 @@ body.home-page {
 .image-seven { background-image: url('../images/3.jpg'); }
 .image-eight { background-image: url('../images/hero-bg.jpg'); }
 
+.testimonial-section {
+    padding: 3.5rem 0 2rem;
+    background: #f2f2f2;
+}
+
+.testimonial-shell {
+    max-width: 1280px;
+    position: relative;
+}
+
+.testimonial-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-header h2 {
+    margin: 0;
+    font-size: clamp(2.3rem, 2.6vw, 3.2rem);
+    font-weight: 700;
+    color: #121212;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.55rem;
+}
+
+.testimonial-line {
+    width: 145px;
+    height: 4px;
+    margin: 0.2rem auto 0;
+    background: #e35c4a;
+    border-radius: 999px;
+}
+
+.testimonial-subtitle {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    margin: 0 auto 2rem;
+    max-width: 700px;
+}
+
+.testimonial-slider-wrap {
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(300px, 1fr);
+    gap: 1.6rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    scroll-snap-align: start;
+    background: #dfeaf0;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 1.1rem;
+    padding: 1.5rem 1.25rem 1.1rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 18px rgba(15, 23, 42, 0.04);
+}
+
+.testimonial-avatar {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.avatar-one { background-image: url('../images/1.jpg'); }
+.avatar-two { background-image: url('../images/2.jpg'); }
+.avatar-three { background-image: url('../images/3.jpg'); }
+
+.testimonial-card h3 {
+    margin: 0 0 1.15rem;
+    font-size: clamp(1.5rem, 1.8vw, 2.2rem);
+    font-weight: 700;
+    color: #131313;
+}
+
+.testimonial-card blockquote {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #1c1c1c;
+    text-align: left;
+    font-style: italic;
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.9rem;
+    margin-top: 1.6rem;
+}
+
+.testimonial-arrow {
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #111111;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.testimonial-arrow:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.logo-marquee-section {
+    padding: 1.5rem 0 4rem;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: logoScroll 22s linear infinite;
+}
+
+.logo-marquee-group {
+    display: flex;
+    gap: 1.1rem;
+    padding-right: 1.1rem;
+}
+
+.logo-card {
+    width: 220px;
+    height: 150px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 16px rgba(15, 23, 42, 0.12);
+}
+
+.logo-card span {
+    display: inline-block;
+    background: rgba(17, 17, 17, 0.46);
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.thumb-one { background-image: url('../images/1.jpg'); }
+.thumb-two { background-image: url('../images/2.jpg'); }
+.thumb-three { background-image: url('../images/3.jpg'); }
+.thumb-four { background-image: url('../images/hero-bg.jpg'); }
+.thumb-five { background-image: url('../images/1.jpg'); }
+
+@keyframes logoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 body.home-page footer {
     display: none;
 }
@@ -337,6 +523,10 @@ body.home-page footer {
 @media (max-width: 1200px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .testimonial-slider {
+        grid-auto-columns: minmax(280px, 1fr);
     }
 }
 

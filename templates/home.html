@@ -153,4 +153,102 @@
         </div>
     </div>
 </section>
+
+<section class="testimonial-section">
+    <div class="container testimonial-shell">
+        <div class="testimonial-header">
+            <h2>Customer Feedback</h2>
+            <div class="testimonial-line"></div>
+        </div>
+        <p class="testimonial-subtitle">Take a look at the variety of services we provide to make your dreams a reality</p>
+
+        <div class="testimonial-slider-wrap">
+            <div class="testimonial-slider" id="testimonialSlider">
+                <article class="testimonial-card">
+                    <div class="testimonial-avatar avatar-one"></div>
+                    <h3>Amit Verma</h3>
+                    <blockquote>
+                        “The solar project executed by Valentina has been a game-changer for us. Their expertise in renewable energy and infrastructure planning ensured smooth installation and long-term benefits.”
+                    </blockquote>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-avatar avatar-two"></div>
+                    <h3>Rahul Sharma</h3>
+                    <blockquote>
+                        “Valentina Construction and Infra completed our commercial project with utmost professionalism. Their quality, transparency, and timely delivery exceeded our expectations.”
+                    </blockquote>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-avatar avatar-three"></div>
+                    <h3>Priya Mehta</h3>
+                    <blockquote>
+                        “We chose Valentina for our residential development, and the experience was outstanding. From design to execution, the team was supportive, innovative, and focused on sustainability. Highly recommended!”
+                    </blockquote>
+                </article>
+            </div>
+        </div>
+
+        <div class="testimonial-controls" aria-label="Testimonials navigation">
+            <button class="testimonial-arrow prev" type="button" aria-label="Previous testimonial">←</button>
+            <button class="testimonial-arrow next" type="button" aria-label="Next testimonial">→</button>
+        </div>
+    </div>
+</section>
+
+<section class="logo-marquee-section" aria-label="Client showcase">
+    <div class="logo-marquee-track">
+        <div class="logo-marquee-group">
+            <div class="logo-card thumb-one"><span>SolarCore</span></div>
+            <div class="logo-card thumb-two"><span>BuildMax</span></div>
+            <div class="logo-card thumb-three"><span>InfraPro</span></div>
+            <div class="logo-card thumb-four"><span>GreenGrid</span></div>
+            <div class="logo-card thumb-five"><span>UrbanFlow</span></div>
+        </div>
+        <div class="logo-marquee-group" aria-hidden="true">
+            <div class="logo-card thumb-one"><span>SolarCore</span></div>
+            <div class="logo-card thumb-two"><span>BuildMax</span></div>
+            <div class="logo-card thumb-three"><span>InfraPro</span></div>
+            <div class="logo-card thumb-four"><span>GreenGrid</span></div>
+            <div class="logo-card thumb-five"><span>UrbanFlow</span></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.getElementById('testimonialSlider');
+        const cards = Array.from(slider.querySelectorAll('.testimonial-card'));
+        const prevButton = document.querySelector('.testimonial-arrow.prev');
+        const nextButton = document.querySelector('.testimonial-arrow.next');
+
+        if (!slider || cards.length === 0) return;
+
+        let currentIndex = 0;
+        const getScrollAmount = () => {
+            const firstCard = cards[0];
+            const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || '24');
+            return firstCard.getBoundingClientRect().width + gap;
+        };
+
+        const goToSlide = (index) => {
+            currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+            slider.scrollTo({
+                left: currentIndex * getScrollAmount(),
+                behavior: 'smooth'
+            });
+        };
+
+        prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+        nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+        setInterval(() => {
+            const nextIndex = currentIndex >= cards.length - 1 ? 0 : currentIndex + 1;
+            goToSlide(nextIndex);
+        }, 4500);
+    });
+</script>
 {% endblock %}
