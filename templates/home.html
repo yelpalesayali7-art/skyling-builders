@@ -1,43 +1,156 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<!-- <section class="hero">
-    <div class="hero-content">
-        <h1>Skyline Builders</h1>
-        <p>Construction & Solar Energy Solutions</p>
-    </div>
-</section> -->
-<div id="carouselExampleIndicators" class="carousel slide container-fluid">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{% static 'images/1.jpg' %}" class="d-block w-100" alt="">
-        </div>
-        <div class="carousel-item">
-            <img src="{% static 'images/2.jpg' %}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="../static/images/3.jpg" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+{% block body_class %}home-page{% endblock %}
 
+{% block content %}
+<section class="hero-carousel">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/1.jpg' %}" alt="Solar panel installation">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="hero-content-box">
+                            <h1>Harnessing clean, renewable solar energy to create a sustainable and brighter future for generations to come.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/2.jpg' %}" alt="Construction project">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="hero-content-box">
+                            <h1>Delivering smart infrastructure and enduring build quality that stands the test of time.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/3.jpg' %}" alt="Sustainable energy landscape">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="hero-content-box">
+                            <h1>Building tomorrow with cleaner power, stronger systems, and responsible innovation.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+        <div class="hero-bottom-bar">
+            <div class="hero-slide-number">1/3</div>
+            <div class="hero-callout">
+                <span>Powering Tomorrow with the Sun</span>
+                <span class="arrow-pill">→</span>
+            </div>
+        </div>
+
+        <div class="floating-socials">
+            <a class="social-bubble whatsapp" href="https://wa.me/" target="_blank" aria-label="WhatsApp">WA</a>
+            <a class="social-bubble phone" href="tel:+0000000000" aria-label="Call us">☎</a>
+        </div>
+    </div>
+</section>
+
+<section class="featured-projects-section">
+    <div class="container-fluid projects-wrap">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+            <article class="project-card project-card-large">
+                <div class="project-image image-one"></div>
+                <div class="project-content">
+                    <h3>Solar Project</h3>
+                    <p>BrightGrid Energy is a comprehensive solar energy service provider specializing in end-to-end solutions.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-two"></div>
+                <div class="project-content">
+                    <h3>Torrent Gas Pipeline Project</h3>
+                    <p>The Torrent Gas Pipeline Network is a state-of-the-art infrastructure project designed to deliver safe, reliable, and...</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-three"></div>
+                <div class="project-content">
+                    <h3>Solar-powered Project</h3>
+                    <p>The Solar-powered Project is a large-scale renewable energy project dedicated to harnessing the power of the sun.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-four"></div>
+                <div class="project-content">
+                    <h3>AquaPure Water &amp; Drainage Project</h3>
+                    <p>The AquaPure Water &amp; Drainage Project is a modern infrastructure initiative aimed at ensuring safe water...</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-five"></div>
+                <div class="project-content">
+                    <h3>Urban Project</h3>
+                    <p>The Urban Project is a modern infrastructure project designed to manage stormwater and wastewater.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-six"></div>
+                <div class="project-content">
+                    <h3>Bridge Highway Project</h3>
+                    <p>The Bridge Highway Project is a large-scale road and bridge development project that connects key urban and...</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-seven"></div>
+                <div class="project-content">
+                    <h3>HydroWave Water Treatment Project</h3>
+                    <p>The HydroWave Water Treatment Project ensures clean, safe, and reliable water supply for communities.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="project-card project-card-large">
+                <div class="project-image image-eight"></div>
+                <div class="project-content">
+                    <h3>Bridge Project</h3>
+                    <p>Bridge Project specializes in delivering comprehensive solutions for bridge infrastructure, ranging from concept...</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 {% endblock %}
